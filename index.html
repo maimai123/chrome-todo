@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>旺才</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/swiper.min.css" />
+  <script src="./js/vue.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/vue-awesome-swiper.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="header">
+      <img class="avatar" :src="user.avatar || default_logo" alt="avatar">
+      <div class="profile">
+        <div v-if="user.nickName" class="title">{{ user.nickName }}</div>
+        <div v-if="user.lastCompanyFullName" class="company">{{ user.lastCompanyFullName }}</div>
+      </div>
+    </div>
+    <div v-if="!isLogin" class="login">
+      <div class="main">
+        <img src="./assets/biglogo.png" alt="logo">
+        <div class="button">点击登录</div>
+        <span class="tip">请先在网页上进行登录</span>
+      </div>
+    </div>
+    <div v-else class="index">
+      <div class="date">
+        <swiper ref="mySwiper" :options="swiperOption">
+          <swiper-slide v-for="item in list" :key="item.date">
+            <div class="item" >
+              <div class="week">{{ item.week }}</div>
+              <div class="day">{{ new Date(item.date).getDate() }}</div>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="list">
+        <ul>
+          <template v-if="Object.keys(datas).length > 0">
+            <template v-for="(item, index) in Object.keys(datas)" :key="item">
+              <template v-if="item === 'remark'">
+                <li v-for="(it, i) in datas[item]" :key="i" class="list-item">
+                  <span class="number">{{ index + i + 1 }}</span>
+                  <div class="text" v-html="it.name ? TODO_TYPE[item].replace(/\{text\}/g, it.name) : ''" />
+                </li>
+              </template>
+              <li v-else class="list-item">
+                <span class="number">{{ (index > Object.keys(datas).indexOf('remark'))
+                  ? index + (datas.remark ? datas.remark.length : 1)
+                  : index + 1 }}</span>
+                  <div class="text">
+                    <span v-html="TODO_TYPE[item].replace(/\{count\}/g, datas[item] instanceof Array ? datas[item].join('、') : datas[item] )"></span>
+                  </div>
+              </li>
+            </template>
+          </template>
+          <div v-else class="empty">
+            <img src="./assets/date.png" alt="logo">
+            <span>没有待办事项哦~</span>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+</html>

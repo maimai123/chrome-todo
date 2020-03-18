@@ -1,0 +1,186 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+#app .header {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #4460e6;
+}
+
+#app .header .avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+#app .header .title {
+  font-weight: 400;
+}
+
+#app .header .company {
+  font-weight:400;
+  color: #f2f2f2;
+}
+
+#app .login .main {
+  width: 180px;
+  margin: 108px auto;
+  text-align: center;
+}
+
+#app .login .main img {
+  height: 64px;
+}
+
+#app .login .button {
+  width: 180px;
+  height: 48px;
+  margin: 60px 0 16px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 48px;
+  color: #fff;
+  cursor: pointer;
+  background: #4460e6;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+#app .login .button:hover {
+  color: #fff;
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+#app .login .tip {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(130, 134, 153, 1);
+}
+
+#app .index {
+  padding: 24px;
+}
+
+#app .index .date {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+#app .index .list {
+  height: 280px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+#app .index .item {
+  display: flex;
+  flex-direction: column;
+  height: 104px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid rgb(243, 243, 247);
+  border-radius: 8px;
+}
+
+#app .index .swiper-slide-active .item {
+  color: #fff;
+  background-color: #4460e6;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#app .index .swiper-slide-active .item .week {
+  color: #fff;
+  background-color: #556fe9;
+  border-bottom: none;
+}
+
+#app .index .swiper-slide-active .item .day {
+  color: #fff;
+}
+
+#app .index .item .week {
+  height: 32px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #828699;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+#app .index .item .day {
+  flex: 1;
+  font-size: 48px;
+  color: #828699;
+}
+
+#app .swiper-container {
+  width: 100%;
+}
+
+#app .list-item {
+  display: flex;
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+#app .list-item .number {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  line-height: 20px;
+  color: #828699;
+  text-align: center;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+}
+#app .list-item .text {
+  font-weight: 400;
+  color: #474C66;
+}
+
+#app .list-item strong {
+  color: #4460E6;
+}
+
+#app .list-item .link {
+  margin-left: 8px;
+  color: #4460E6;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#app .empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #d9d9d9;
+  font-size: 14px;
+  margin-top: 100px;
+}
+
+#app .empty img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "旺才",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "chrome plugin demo",
+  "browser_action": {
+    "default_icon": "assets/icon.png",
+    "default_title": "旺才",
+    "default_popup": "index.html"
+  },
+  "icons":
+  {
+    "16": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  },
+  "content_security_policy": "style-src 'self' 'unsafe-inline';script-src 'self' 'unsafe-eval' https://cdn.bootcss.com; object-src 'self' ;",
+  "homepage_url": "https://www.wangcaihr.com",
+  "background":
+  {
+    "scripts": ["background.js"]
+  },
+  "permissions":
+    [
+      "contextMenus",
+      "tabs",
+      "notifications",
+      "storage",
+      "cookies",
+      "webRequest",
+      "webRequestBlocking",
+      "background",
+      "https://*/*",
+      "http://*/*"
+    ]
+}
